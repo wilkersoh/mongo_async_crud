@@ -45,7 +45,8 @@ const handleLogin = async (req, res) => {
 		});
 
 		// Send authorization roles and access token to user
-		res.json({ roles, accessToken });
+		// not need to send roles, the role already inside accessToken
+		res.json({ accessToken });
 	} else {
 		res.sendStatus(401);
 	}
